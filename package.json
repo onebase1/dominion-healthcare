@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@netlify/vite-plugin": "^2.12.9",
-    "@rolldown/binding-win32-x64-msvc": "^1.2.12",
     "@tailwindcss/vite": "^4.3.3",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^24.13.3",
