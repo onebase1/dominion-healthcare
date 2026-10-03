@@ -1,0 +1,20 @@
+{
+  "project": "Dominion Healthcare Services Ltd",
+  "domain": "UK Healthcare Recruitment and Temporary Staffing Agency",
+  "guardrails": [
+    "Never describe Dominion Healthcare as a care home or hospital. It is a staffing agency supplying temporary and permanent nurses and carers to healthcare facilities.",
+    "Preserve primary phone number 01642 345242 and Stockton-on-Tees headquarters in all contact references.",
+    "Ensure all new forms maintain Netlify Forms discovery by including matching static forms in index.html."
+  ],
+  "stack": {
+    "framework": "React 19",
+    "language": "TypeScript",
+    "bundler": "Vite 8",
+    "styling": "Tailwind CSS v4",
+    "icons": "Lucide React"
+  },
+  "commands": {
+    "dev": "npm run dev",
+    "build": "npm run build"
+  }
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominion Healthcare Services | UK Healthcare Staffing & Temp Recruitment Agency</title>
+    <meta name="description" content="Dominion Healthcare Services is a premier UK healthcare employment agency supplying compliant Registered Nurses (RGN/RMN), Healthcare Assistants, and Support Workers to Care Homes and Hospitals 24/7." />
+    
+    <!-- Open Graph / Meta for Social & WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dominion Healthcare Services | UK Healthcare Staffing Agency" />
+    <meta property="og:description" content="Fast, compliant temporary nursing and care staffing for care homes and hospitals across North East England & nationwide. Available 24/7/365." />
+    <meta property="og:url" content="https://dhcservicesltd.co.uk" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+
+    <!-- Hidden HTML Forms for Netlify Form Bots Pre-Processing -->
+    <form name="staff-booking" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="facilityName" />
+      <input type="text" name="facilityType" />
+      <input type="text" name="contactName" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="postcode" />
+      <input type="text" name="staffType" />
+      <input type="number" name="numberOfStaff" />
+      <input type="text" name="shiftTiming" />
+      <input type="date" name="startDate" />
+      <input type="text" name="urgency" />
+      <textarea name="specialRequirements"></textarea>
+    </form>
+
+    <form name="candidate-registration" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="location" />
+      <input type="text" name="roleApplyingFor" />
+      <input type="text" name="experienceYears" />
+      <input type="checkbox" name="hasEnhancedDBS" />
+      <input type="text" name="nmcPin" />
+      <input type="text" name="availability" />
+      <textarea name="notes"></textarea>
+    </form>
+
+    <form name="contact-general" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="subject" />
+      <input type="text" name="inquiryType" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+    </form>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
