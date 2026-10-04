@@ -52,7 +52,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-blue-600 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block mb-3">
+          <span className="text-emerald-800 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block mb-3">
             Interactive Rate & Pay Estimator
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -68,7 +68,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
               onClick={() => setCalculatorMode('candidate')}
               className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 calculatorMode === 'candidate'
-                  ? 'bg-white text-slate-900 shadow-sm'
+                  ? 'bg-white text-emerald-900 shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -79,11 +79,11 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
               onClick={() => setCalculatorMode('facility')}
               className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 calculatorMode === 'facility'
-                  ? 'bg-white text-slate-900 shadow-sm'
+                  ? 'bg-white text-emerald-900 shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Building className="w-4 h-4 text-blue-600" />
+              <Building className="w-4 h-4 text-emerald-800" />
               <span>For Facilities (Staffing Rates)</span>
             </button>
           </div>
@@ -125,7 +125,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                   <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                     2. Hours Worked Per Week
                   </label>
-                  <span className="text-sm font-extrabold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded border border-blue-200">
+                  <span className="text-sm font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
                     {hoursPerWeek} Hours / week
                   </span>
                 </div>
@@ -136,7 +136,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                   step="4"
                   value={hoursPerWeek}
                   onChange={e => setHoursPerWeek(parseInt(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                 />
                 <div className="flex justify-between text-[11px] text-slate-400 mt-1">
                   <span>Part-Time (12h)</span>
@@ -156,7 +156,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                     onClick={() => setShiftUplift('day')}
                     className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                       shiftUplift === 'day'
-                        ? 'border-blue-600 bg-blue-50 text-blue-800'
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-900 font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -167,7 +167,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                     onClick={() => setShiftUplift('night')}
                     className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                       shiftUplift === 'night'
-                        ? 'border-blue-600 bg-blue-50 text-blue-800'
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-900 font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -178,7 +178,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                     onClick={() => setShiftUplift('weekend')}
                     className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                       shiftUplift === 'weekend'
-                        ? 'border-blue-600 bg-blue-50 text-blue-800'
+                        ? 'border-emerald-600 bg-emerald-50 text-emerald-900 font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -189,7 +189,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
             </div>
 
             {/* Output Column */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-slate-900 to-blue-950 p-6 sm:p-10 text-white flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 p-6 sm:p-10 text-white flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-6">
                   <Sparkles className="w-3.5 h-3.5" /> Fast Weekly Friday Payroll
@@ -198,12 +198,12 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                 <div className="space-y-4 mb-6">
                   <div>
                     <span className="text-xs text-slate-400 font-medium">Estimated Hourly Average</span>
-                    <div className="text-2xl font-extrabold text-cyan-300">
+                    <div className="text-2xl font-extrabold text-emerald-300">
                       £{getEffectiveRate().toFixed(2)} <span className="text-xs text-slate-400 font-normal">/ hour</span>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <div className="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30">
                     <span className="text-xs text-slate-400 font-medium block mb-1">Estimated Weekly Pay</span>
                     <div className="text-3xl sm:text-4xl font-extrabold text-white">
                       £{Math.round(weeklyCandidateEarnings).toLocaleString('en-GB')}
@@ -266,7 +266,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                       onClick={() => setFacilityRole(item.key as any)}
                       className={`p-3 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                         facilityRole === item.key
-                          ? 'border-blue-600 bg-blue-50 text-blue-900 font-bold shadow-xs'
+                          ? 'border-emerald-700 bg-emerald-50 text-emerald-950 font-bold shadow-xs'
                           : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                       }`}
                     >
@@ -281,7 +281,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                   <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                     2. Shifts Required Per Week (12-Hour Shifts)
                   </label>
-                  <span className="text-sm font-extrabold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded border border-blue-200">
+                  <span className="text-sm font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
                     {shiftsPerWeek} shifts ({shiftsPerWeek * 12} hrs)
                   </span>
                 </div>
@@ -292,7 +292,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                   step="1"
                   value={shiftsPerWeek}
                   onChange={e => setShiftsPerWeek(parseInt(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-700"
                 />
                 <div className="flex justify-between text-[11px] text-slate-400 mt-1">
                   <span>Single Shift (1)</span>
@@ -311,7 +311,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                     onClick={() => setFacilityShiftType('day')}
                     className={`py-3 px-4 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                       facilityShiftType === 'day'
-                        ? 'border-blue-600 bg-blue-50 text-blue-900 font-bold'
+                        ? 'border-emerald-700 bg-emerald-50 text-emerald-950 font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -322,7 +322,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
                     onClick={() => setFacilityShiftType('night')}
                     className={`py-3 px-4 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
                       facilityShiftType === 'night'
-                        ? 'border-blue-600 bg-blue-50 text-blue-900 font-bold'
+                        ? 'border-emerald-700 bg-emerald-50 text-emerald-950 font-bold'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -333,26 +333,26 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
             </div>
 
             {/* Facility Outputs */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-blue-950 to-slate-900 p-6 sm:p-10 text-white flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 p-6 sm:p-10 text-white flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-6">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-6">
                   <Building className="w-3.5 h-3.5" /> CQC-Compliant Shift Pricing
                 </div>
 
                 <div className="space-y-4 mb-6">
                   <div>
                     <span className="text-xs text-slate-400 font-medium">All-Inclusive Agency Hourly Rate</span>
-                    <div className="text-2xl font-extrabold text-cyan-300">
+                    <div className="text-2xl font-extrabold text-emerald-300">
                       £{getFacilityRate().toFixed(2)} <span className="text-xs text-slate-400 font-normal">/ hour</span>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <div className="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30">
                     <span className="text-xs text-slate-400 font-medium block mb-1">Estimated Weekly Investment</span>
                     <div className="text-3xl sm:text-4xl font-extrabold text-white">
                       £{Math.round(weeklyFacilityCost).toLocaleString('en-GB')}
                     </div>
-                    <span className="text-[11px] text-blue-300 font-medium mt-1 block">
+                    <span className="text-[11px] text-emerald-300 font-medium mt-1 block">
                       Includes NI, holiday pay, compliance checks & insurance
                     </span>
                   </div>
@@ -367,15 +367,15 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
 
                 <div className="space-y-1.5 text-xs text-slate-300 mb-6">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>No upfront retainer or hidden administrative charges</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Volume discounts available on block rota contracts</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Full digital compliance pack sent prior to shift start</span>
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export const EarningsCalculator: React.FC<EarningsCalculatorProps> = ({ onJoinUs
 
               <button
                 onClick={onRequestStaff}
-                className="w-full py-3.5 px-4 rounded-xl bg-blue-500 hover:bg-blue-400 text-white font-extrabold text-sm shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg shadow-emerald-700/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Book Shifts at These Rates</span>
                 <ArrowRight className="w-4 h-4" />

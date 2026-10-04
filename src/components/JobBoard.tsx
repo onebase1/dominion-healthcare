@@ -55,7 +55,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <span className="text-blue-600 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block mb-3">
+            <span className="text-emerald-800 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block mb-3">
               Dominion Careers & Vacancies
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -69,7 +69,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
           <div className="flex items-center gap-3">
             <button
               onClick={onGeneralRegister}
-              className="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-semibold text-xs sm:text-sm shadow-md shadow-emerald-900/20 transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>Don't see your role? Send CV</span>
               <ArrowRight className="w-4 h-4" />
@@ -88,7 +88,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                 placeholder="Search by job title, skill or keyword..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
               />
               {searchTerm && (
                 <button
@@ -106,7 +106,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
               <select
                 value={selectedLocation}
                 onChange={e => setSelectedLocation(e.target.value as JobLocation)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
               >
                 {locations.map(loc => (
                   <option key={loc} value={loc}>
@@ -128,7 +128,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                     setSelectedCategory('All');
                     setSelectedLocation('All');
                   }}
-                  className="text-blue-600 hover:underline font-semibold cursor-pointer"
+                  className="text-emerald-700 hover:underline font-semibold cursor-pointer"
                 >
                   Reset all filters
                 </button>
@@ -147,8 +147,8 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-blue-600 text-white shadow-xs'
-                    : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                    ? 'bg-emerald-700 text-white shadow-xs'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-800'
                 }`}
               >
                 {cat}
@@ -163,13 +163,13 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
             {filteredJobs.map(job => (
               <div
                 key={job.id}
-                className="bg-white border border-slate-200 hover:border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group relative"
+                className="bg-white border border-slate-200 hover:border-emerald-500 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group relative"
               >
                 {/* Card Top Badges */}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 text-xs font-bold border border-blue-200">
+                      <span className="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
                         {job.category}
                       </span>
                       {job.urgent && (
@@ -192,11 +192,11 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                   </div>
 
                   {/* Title & Pay Rate */}
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-2">
                     {job.title}
                   </h3>
 
-                  <div className="inline-block px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-extrabold mb-4">
+                  <div className="inline-block px-3 py-1 rounded-lg bg-emerald-100/70 border border-emerald-300 text-emerald-900 text-sm font-extrabold mb-4">
                     {job.payRate}
                   </div>
 
@@ -228,7 +228,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                     </span>
                     {job.requirements.slice(0, 3).map((req, idx) => (
                       <div key={idx} className="flex items-start gap-1.5 text-xs text-slate-700">
-                        <span className="text-emerald-500 font-bold shrink-0">✓</span>
+                        <span className="text-emerald-600 font-bold shrink-0">✓</span>
                         <span className="line-clamp-1">{req}</span>
                       </div>
                     ))}
@@ -242,7 +242,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                   </span>
                   <button
                     onClick={() => onApplyForJob(job)}
-                    className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-500/20 hover:shadow-lg transition-all flex items-center gap-1.5 cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs shadow-md shadow-emerald-700/20 hover:shadow-lg transition-all flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>Quick Apply</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -264,7 +264,7 @@ export const JobBoard: React.FC<JobBoardProps> = ({ onApplyForJob, onGeneralRegi
                 setSelectedCategory('All');
                 setSelectedLocation('All');
               }}
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold mr-2 cursor-pointer"
+              className="px-4 py-2 rounded-lg bg-emerald-700 text-white text-xs font-semibold mr-2 cursor-pointer hover:bg-emerald-800"
             >
               Reset Filters
             </button>

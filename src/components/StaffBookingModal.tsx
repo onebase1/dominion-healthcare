@@ -71,20 +71,20 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
       <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8">
         {/* Modal Header */}
-        <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-6 sm:p-7 relative">
+        <div className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white p-6 sm:p-7 relative">
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full text-blue-200 hover:text-white hover:bg-blue-600/50 transition-colors"
+            className="absolute top-5 right-5 p-2 rounded-full text-emerald-200 hover:text-white hover:bg-emerald-700/50 transition-colors"
             aria-label="Close Modal"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="flex items-center gap-2 mb-2">
-            <span className="px-2.5 py-0.5 rounded-full bg-blue-500/30 text-blue-100 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-100 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
               <Building2 className="w-3.5 h-3.5" /> Healthcare Facility Portal
             </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-200 text-xs font-medium">
+            <span className="px-2.5 py-0.5 rounded-full bg-teal-500/30 text-teal-200 text-xs font-medium">
               24/7 Fast Dispatch
             </span>
           </div>
@@ -92,7 +92,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
           <h3 className="text-xl sm:text-2xl font-extrabold text-white">
             Request Shift Cover / Book Healthcare Staff
           </h3>
-          <p className="text-blue-100 text-xs sm:text-sm mt-1">
+          <p className="text-emerald-100 text-xs sm:text-sm mt-1">
             Need staff coverage for your care home, hospital, or supported living facility? Submit your request below or call <a href={`tel:${COMPANY_DETAILS.phoneClean}`} className="font-bold underline hover:text-white">{COMPANY_DETAILS.phone}</a>.
           </p>
         </div>
@@ -136,8 +136,8 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 flex items-start gap-3 max-w-lg mx-auto">
-                <PhoneCall className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs text-emerald-900 flex items-start gap-3 max-w-lg mx-auto">
+                <PhoneCall className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
                   Our on-call coordinator is reviewing staff files right now. You will receive a direct telephone confirmation within <strong>15 minutes</strong> with the allocated staff member’s CQC compliance profile.
                 </p>
@@ -176,7 +176,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                         formData.urgency === level
                           ? level.includes('Emergency')
                             ? 'bg-rose-50 border-rose-500 text-rose-700 shadow-xs'
-                            : 'bg-blue-50 border-blue-600 text-blue-700 shadow-xs'
+                            : 'bg-emerald-50 border-emerald-600 text-emerald-800 shadow-xs'
                           : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                       }`}
                     >
@@ -206,12 +206,12 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                         onClick={() => handleRoleToggle(role)}
                         className={`p-2.5 rounded-lg text-xs font-medium border text-left flex flex-col justify-between transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-blue-50/80 border-blue-600 text-blue-900 font-semibold'
+                            ? 'bg-emerald-50 border-emerald-600 text-emerald-950 font-semibold'
                             : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                         }`}
                       >
                         <span>{role}</span>
-                        <span className={`text-[10px] mt-1 ${isSelected ? 'text-blue-600' : 'text-slate-400'}`}>
+                        <span className={`text-[10px] mt-1 ${isSelected ? 'text-emerald-700' : 'text-slate-400'}`}>
                           {isSelected ? '✓ Selected' : '+ Add'}
                         </span>
                       </button>
@@ -233,7 +233,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                     required
                     value={formData.numberOfStaff}
                     onChange={e => setFormData({ ...formData, numberOfStaff: parseInt(e.target.value) || 1 })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                   />
                 </div>
 
@@ -244,7 +244,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                   <select
                     value={formData.shiftTiming}
                     onChange={e => setFormData({ ...formData, shiftTiming: e.target.value as any })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden bg-white"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden bg-white"
                   >
                     <option value="Long Day (12h)">Long Day (08:00 - 20:00)</option>
                     <option value="Day Shift">Day Shift (08:00 - 14:00)</option>
@@ -264,7 +264,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                     required
                     value={formData.startDate}
                     onChange={e => setFormData({ ...formData, startDate: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden bg-white"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden bg-white"
                   />
                 </div>
               </div>
@@ -286,7 +286,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="e.g. Primrose Court Nursing Home"
                       value={formData.facilityName}
                       onChange={e => setFormData({ ...formData, facilityName: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
 
@@ -297,7 +297,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                     <select
                       value={formData.facilityType}
                       onChange={e => setFormData({ ...formData, facilityType: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden bg-white"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden bg-white"
                     >
                       <option value="Care Home">Residential Care Home</option>
                       <option value="Nursing Home">Nursing Home</option>
@@ -321,7 +321,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="e.g. Sarah Jenkins (Manager)"
                       value={formData.contactName}
                       onChange={e => setFormData({ ...formData, contactName: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
 
@@ -335,7 +335,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="01642 xxxxxx / 07xxx"
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
 
@@ -349,7 +349,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="manager@carehome.co.uk"
                       value={formData.email}
                       onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -365,7 +365,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="e.g. TS18 1DW, Stockton"
                       value={formData.postcode}
                       onChange={e => setFormData({ ...formData, postcode: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
 
@@ -378,7 +378,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                       placeholder="e.g. Dementia unit, Hoist training, PEG feed"
                       value={formData.specialRequirements}
                       onChange={e => setFormData({ ...formData, specialRequirements: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -402,7 +402,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 sm:flex-initial px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-xs font-bold transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="flex-1 sm:flex-initial px-6 py-2.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 disabled:opacity-50 text-white text-xs font-bold transition-all shadow-md shadow-emerald-900/20 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <CalendarCheck className="w-4 h-4" />
                     <span>{isSubmitting ? 'Dispatching...' : 'Confirm & Request Staff'}</span>

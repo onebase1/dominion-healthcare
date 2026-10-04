@@ -33,34 +33,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-cyan-500 flex items-center justify-center text-white font-extrabold text-xl">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-700 to-teal-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-emerald-900/40">
                 D
               </div>
               <div>
                 <span className="font-extrabold text-xl tracking-tight text-white block">DOMINION</span>
-                <span className="text-[10px] uppercase tracking-wider text-slate-400 block -mt-1 font-semibold">
+                <span className="text-[10px] uppercase tracking-wider text-emerald-400 block -mt-1 font-semibold">
                   Healthcare Staffing Services Ltd
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Dominion Healthcare Services is a premier UK healthcare recruitment and staffing agency. We provide fully compliant temporary Registered Nurses (RGN/RMN), Healthcare Assistants, and Support Workers to Care Homes, NHS Trusts, and Hospitals 24/7/365.
+              Dominion Healthcare Services is a premier UK healthcare recruitment and temporary staffing agency. We supply fully compliant Registered Nurses (RGN/RMN), Healthcare Assistants, and Support Workers to Care Homes, NHS Trusts, and Hospitals 24/7/365.
             </p>
 
             <div className="space-y-2 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href={`tel:${COMPANY_DETAILS.phoneClean}`} className="hover:text-white transition-colors font-semibold">
                   01642 345242 (24/7 Dispatch)
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-white transition-colors">
                   {COMPANY_DETAILS.email}
                 </a>
@@ -205,7 +205,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
                   placeholder="Enter your email"
                   value={newsletterEmail}
                   onChange={e => setNewsletterEmail(e.target.value)}
-                  className="w-full pl-3 pr-9 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-blue-500"
+                  className="w-full pl-3 pr-9 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500"
                 />
                 <button
                   type="submit"
@@ -228,7 +228,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
               </span>
               <a
                 href={`tel:${COMPANY_DETAILS.phoneClean}`}
-                className="text-xs font-extrabold text-cyan-400 hover:underline block"
+                className="text-xs font-extrabold text-emerald-400 hover:underline block"
               >
                 01642 345242
               </a>
@@ -248,8 +248,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1 text-[11px] text-slate-400">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-400" /> CQC-Aligned Standards
+            <span className="inline-flex items-center gap-1 text-[11px] text-emerald-400">
+              <ShieldCheck className="w-3.5 h-3.5" /> CQC-Aligned Standards
             </span>
             <button
               onClick={scrollToTop}

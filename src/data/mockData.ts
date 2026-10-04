@@ -283,11 +283,24 @@ export const FEATURED_JOBS: JobOpening[] = [
   }
 ];
 
+export const IMAGES = {
+  heroNurse: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80',
+  nurseColleague: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+  clinicalCare: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+  hcaElderlyCare: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',
+  nurseAtWork: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+  teamDoctorsNurses: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80',
+  modernHospitalCareHome: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+  supportWorker: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+  trainingEquipment: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+};
+
 export const SERVICES = [
   {
     id: 'registered-nurses',
     title: 'Registered Nurses (RGN & RMN)',
     subtitle: 'Clinical Excellence & Safe Patient Care',
+    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
     description: 'Fully qualified, NMC-registered nurses ready for immediate deployment in care homes, private hospitals, hospice, and rehabilitation centers.',
     skills: [
       'Medication administration & IV therapy',
@@ -305,6 +318,7 @@ export const SERVICES = [
     id: 'healthcare-assistants',
     title: 'Healthcare Assistants (HCA)',
     subtitle: 'Compassionate Dignified Daily Care',
+    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',
     description: 'Experienced, trained HCAs providing personalized daily living assistance, personal care, and emotional companionship with warmth and dignity.',
     skills: [
       'Personal care & hygiene support',
@@ -322,6 +336,7 @@ export const SERVICES = [
     id: 'support-workers',
     title: 'Specialist Support Workers',
     subtitle: 'Empowering Independence & Well-being',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
     description: 'Trained professionals supporting individuals with learning disabilities, mental health diagnoses, autism, and brain injuries in community and residential settings.',
     skills: [
       'Positive Behaviour Support (PBS)',
@@ -339,6 +354,7 @@ export const SERVICES = [
     id: 'emergency-cover',
     title: '24/7 Rapid Emergency Shift Cover',
     subtitle: '60–90 Minute Average Response Time',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     description: 'Last-minute sickness, unexpected absences, or sudden surges in occupancy? Our on-call coordinators dispatch verified staff within minutes.',
     skills: [
       'Dedicated 24/7 phone line (no robot answering)',

@@ -1,5 +1,5 @@
-import { ShieldCheck, CheckCircle2, FileCheck, GraduationCap, ArrowRight, Lock } from 'lucide-react';
-import { TRAINING_MODULES, VETTING_STANDARDS } from '../data/mockData';
+import { ShieldCheck, CheckCircle2, FileCheck, GraduationCap, ArrowRight, Lock, MapPin } from 'lucide-react';
+import { TRAINING_MODULES, VETTING_STANDARDS, IMAGES } from '../data/mockData';
 
 interface ComplianceHubProps {
   onRequestStaff: () => void;
@@ -12,7 +12,7 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-blue-600 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block mb-3">
+          <span className="text-emerald-800 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block mb-3">
             Clinical Governance & Quality Assurance
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -24,12 +24,12 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
         </div>
 
         {/* 7-Point Vetting Guarantee */}
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-8 border-b border-slate-800">
             <div>
-              <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
                 <ShieldCheck className="w-4 h-4" /> 7-Point Quality Standard
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -47,10 +47,10 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
             {VETTING_STANDARDS.map(standard => (
               <div
                 key={standard.step}
-                className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-cyan-500/50 transition-all flex flex-col justify-between"
+                className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/50 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white font-extrabold text-sm flex items-center justify-center mb-4 shadow-md">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center mb-4 shadow-md">
                     {standard.step}
                   </div>
                   <h4 className="text-base font-bold text-white mb-2">
@@ -60,26 +60,26 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
                     {standard.detail}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center gap-1 text-[11px] text-cyan-300 font-medium">
+                <div className="mt-4 pt-3 border-t border-slate-800 flex items-center gap-1 text-[11px] text-emerald-300 font-medium">
                   <Lock className="w-3 h-3" /> Fully Verified
                 </div>
               </div>
             ))}
 
-            {/* Final Summary Card */}
-            <div className="bg-gradient-to-br from-blue-900 to-indigo-950 border border-blue-600 rounded-2xl p-6 flex flex-col justify-between text-white">
+            {/* Final Summary Card with Digital Compliance File */}
+            <div className="bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 border border-emerald-600/50 rounded-2xl p-6 flex flex-col justify-between text-white shadow-xl">
               <div>
-                <FileCheck className="w-8 h-8 text-cyan-300 mb-4" />
+                <FileCheck className="w-8 h-8 text-emerald-400 mb-4" />
                 <h4 className="text-lg font-bold text-white mb-2">
                   Digital Compliance Packs
                 </h4>
-                <p className="text-xs text-blue-100 leading-relaxed">
+                <p className="text-xs text-emerald-100 leading-relaxed">
                   Before any agency staff member crosses your threshold, your management team receives an electronic compliance file with DBS verification, photo ID, and training credentials.
                 </p>
               </div>
               <button
                 onClick={onRequestStaff}
-                className="mt-6 w-full py-2.5 px-4 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs transition-colors cursor-pointer text-center"
+                className="mt-6 w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors cursor-pointer text-center shadow-md shadow-emerald-900/30"
               >
                 Request Facility Staff
               </button>
@@ -87,11 +87,11 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
           </div>
         </div>
 
-        {/* Accredited Training Hub Section */}
+        {/* Accredited Training Hub Section with Photo */}
         <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
-              <span className="text-emerald-700 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block mb-2">
+              <span className="text-emerald-800 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block mb-2">
                 Certified Practical Courses
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
@@ -108,6 +108,30 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
               <GraduationCap className="w-4 h-4" />
               <span>Enroll in Free Training Modules</span>
             </button>
+          </div>
+
+          {/* Visual Highlight Banner for Training Facility */}
+          <div className="mb-8 rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 grid grid-cols-1 md:grid-cols-12 items-center">
+            <div className="md:col-span-4 h-48 md:h-full relative">
+              <img
+                src={IMAGES.trainingEquipment}
+                alt="Accredited clinical training equipment and healthcare skills suite"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/80 hidden md:block"></div>
+            </div>
+            <div className="md:col-span-8 p-6 sm:p-8 text-white space-y-3">
+              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                <MapPin className="w-4 h-4" /> Stockton Business Centre Clinical Suite
+              </div>
+              <h4 className="text-xl font-bold">
+                Practical, Hands-On Mandatory Training for All Roster Staff
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                Every nurse and healthcare assistant refreshes their Moving & Handling hoists, CPR mannequins, and PMVA de-escalation drills in person with certified clinical instructors. Our clients rest easy knowing Dominion staff are prepared from day one.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -148,13 +172,13 @@ export const ComplianceHub: React.FC<ComplianceHubProps> = ({ onRequestStaff, on
 
                 <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
                   <span className="text-[11px] text-slate-500 font-medium">
-                    Free for Dominion staff
+                    Certificate Issued Upon Completion
                   </span>
                   <button
                     onClick={onJoinUs}
                     className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1 cursor-pointer"
                   >
-                    <span>Sign up</span>
+                    <span>Register</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>

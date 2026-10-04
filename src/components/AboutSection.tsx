@@ -1,4 +1,5 @@
 import { Heart, Compass, Shield, MapPin, CheckCircle2 } from 'lucide-react';
+import { IMAGES } from '../data/mockData';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-blue-600 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block">
+            <span className="text-emerald-800 font-bold text-xs uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block">
               Our Heritage & Vision
             </span>
 
@@ -20,72 +21,92 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p className="text-slate-600 text-sm leading-relaxed">
-              With over a decade of dedicated service, we have expanded our reach to cover the entire region—Stockton-on-Tees, Middlesbrough, County Durham, Newcastle upon Tyne, Sunderland—and nationwide across the UK. Driven by a mission to provide expert care professionals on demand, our journey is marked by significant milestones: enriching over 120 healthcare organisations, facilitating employment for thousands of nurses and carers, and proudly accounting for more than 70,000 completed shifts.
+              With over a decade of dedicated service, we have expanded our reach to cover the entire region—Stockton-on-Tees, Middlesbrough, County Durham, Newcastle upon Tyne, Sunderland—and nationwide across the UK. Driven by a mission to provide expert care professionals on demand, our journey is marked by significant milestones: enriching over 120 healthcare organisations, facilitating employment for hundreds of nurses and carers, and proudly accounting for more than 70,000 completed shifts.
             </p>
 
             {/* Core Values 3-Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-2">
+                <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-2">
                   <Shield className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 mb-1">Integrity & Trust</h4>
                 <p className="text-xs text-slate-600 leading-normal">
-                  Strict adherence to ethical recruitment, WHO global health guidelines, and UK employment standards.
+                  Strict adherence to ethical recruitment, CQC compliance standards, and UK employment legislation.
                 </p>
               </div>
 
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
+                <div className="w-9 h-9 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center mb-2">
                   <Heart className="w-5 h-5" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 mb-1">Compassionate Ethos</h4>
+                <h4 className="text-sm font-bold text-slate-900 mb-1">Compassionate Care</h4>
                 <p className="text-xs text-slate-600 leading-normal">
-                  We treat every placement not as numbers, but as human care delivered with empathy and dignity.
+                  We treat every placement not as numbers, but as human care delivered with empathy, skill, and dignity.
                 </p>
               </div>
 
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
-                <div className="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-2">
+                <div className="w-9 h-9 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center mb-2">
                   <Compass className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 mb-1">24/7 Accountability</h4>
                 <p className="text-xs text-slate-600 leading-normal">
-                  Around-the-clock coordinator desk in Stockton-on-Tees supporting clients and staff 365 days a year.
+                  Around-the-clock coordinator desk in Stockton-on-Tees supporting care home clients and staff 365 days a year.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Highlights Card */}
-          <div className="lg:col-span-5">
-            <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-8 shadow-2xl border border-slate-800 relative">
-              <div className="flex items-center gap-2 mb-6">
-                <MapPin className="w-4 h-4 text-cyan-400" />
+          {/* Right Highlights Column with Photo Card */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Authentic Healthcare Team Photo */}
+            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg relative group">
+              <img
+                src={IMAGES.teamDoctorsNurses}
+                alt="Dominion Healthcare agency nurses and clinical team"
+                className="w-full h-56 object-cover group-hover:scale-102 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <div className="absolute bottom-3 left-4 right-4 text-white">
+                <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider block">
+                  Stockton-on-Tees Hub
+                </span>
+                <span className="text-sm font-bold">
+                  Dedicated Coordinators & Healthcare Professionals
+                </span>
+              </div>
+            </div>
+
+            {/* The Dominion Difference Card */}
+            <div className="bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 text-white rounded-3xl p-7 shadow-xl border border-emerald-800/40 relative">
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-4 h-4 text-emerald-400" />
                 <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
                   Stockton Business Centre, TS18 1DW
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-white mb-3">
                 The Dominion Difference
               </h3>
 
-              <div className="space-y-4 mb-8 text-xs text-slate-300">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+              <div className="space-y-3 mb-6 text-xs text-slate-300">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <span>
-                    <strong>Local & Responsive:</strong> Unlike distant call centers, our coordinators are rooted in the North East healthcare ecosystem.
+                    <strong>Local & Responsive:</strong> Our coordinators know the local care facilities, roads, and shift patterns across Teesside and the North East.
                   </span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <span>
                     <strong>People First:</strong> We support our agency staff with competitive rates, weekly payroll, and personal well-being checks.
                   </span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <span>
                     <strong>Compliance Transparency:</strong> Full audit files delivered proactively to your facility prior to every shift.
                   </span>
@@ -93,22 +114,22 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Stats Box */}
-              <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 grid grid-cols-2 gap-4 text-center">
+              <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 grid grid-cols-2 gap-3 text-center">
                 <div>
-                  <div className="text-2xl font-extrabold text-cyan-300">70,000+</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider">Shifts Delivered</div>
+                  <div className="text-xl font-extrabold text-emerald-400">70,000+</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Shifts Delivered</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-extrabold text-blue-400">120+</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider">Care Providers</div>
+                  <div className="text-xl font-extrabold text-teal-300">120+</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Care Providers</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-extrabold text-emerald-400">24,000+</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider">Annual Care Hrs</div>
+                  <div className="text-xl font-extrabold text-green-400">24,000+</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Annual Care Hrs</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-extrabold text-amber-400">10+ Years</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider">Track Record</div>
+                  <div className="text-xl font-extrabold text-amber-400">10+ Years</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Track Record</div>
                 </div>
               </div>
             </div>
