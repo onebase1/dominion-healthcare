@@ -19,7 +19,7 @@ export const MobileQuickBar: React.FC<MobileQuickBarProps> = ({ onJoinUs, onRequ
         >
           <PhoneCall className="w-4 h-4 mb-0.5 text-emerald-400" />
           <span className="text-[10px] font-bold tracking-tight text-white leading-tight">24/7 Desk</span>
-          <span className="text-[8px] text-emerald-400 font-mono">01642 345242</span>
+          <span className="text-[8px] text-emerald-400 font-mono">{COMPANY_DETAILS.phone}</span>
         </a>
 
         {/* Join Roster / Upload CV Button */}

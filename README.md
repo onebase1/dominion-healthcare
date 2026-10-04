@@ -29,27 +29,39 @@ The agency provides fully vetted, compliant healthcare personnel to third-party 
    - **For Healthcare Providers**: Immediate shift cover request form, 7-point compliance guarantee, transparent agency rates, 24/7 on-call coordinator hotline.
    - **For Healthcare Professionals**: Quick-apply workflow, live vacancies board, weekly Friday payroll transparency, free certified mandatory training.
 
-2. **Interactive Live Job Board**:
-   - Filter by clinical category (RGN/RMN, HCA, Support Worker).
-   - Filter by location (Stockton-on-Tees, Middlesbrough, Durham, Newcastle, Seaham, Sunderland).
-   - Real-time search by title or keyword.
-   - 1-click **Quick Apply** modal with pre-filled job metadata and optional CV upload.
+2. **Streamlined Navigation & Official DHCS Branding**:
+   - Clean, grouped header navigation ("For Care Providers", "For Healthcare Staff", "About Us", "Contact Desk").
+   - Official **DHCS** SVG brand logo featuring the 4 linked caregivers holding hands.
+   - Matching authentic favicon (`public/favicon.svg`).
 
-3. **Rapid Staff Booking Modal (B2B)**:
-   - Tailored specifically for care home managers, hospital ward matrons, and staffing coordinators.
-   - Urgency levels: *Emergency (< 2 Hours)*, *Urgent (Within 24 Hours)*, *Planned Rota / Block Booking*.
+3. **Anti-Scraping Email Protection**:
+   - Zero plain-text `mailto:` links visible to web scrapers and spambots.
+   - Bot-deflecting `<ProtectedEmail />` component with 1-click clipboard copy and dynamic mail client trigger.
+
+4. **Single Source of Truth Configuration**:
+   - Change the agency telephone number or contact details across the whole platform in a single file: `src/config/siteConfig.ts`.
+
+5. **Instant Theme & Font Customization**:
+   - Easily swap brand colors (primary emerald, dark green, accent, gold) and typography directly in `src/index.css` via Tailwind CSS v4 `@theme`.
+
+6. **Interactive Live Job Board**:
+   - Filter by clinical category (RGN/RMN, HCA, Support Worker) and location (Stockton, Middlesbrough, Durham, Newcastle, Sunderland).
+   - Real-time search and 1-click **Quick Apply** modal with pre-filled job metadata and CV upload.
+
+7. **Rapid Staff Booking Modal (B2B)**:
+   - Built specifically for care home managers, hospital ward matrons, and staffing coordinators.
+   - Urgency levels: *Emergency (< 2 Hours)*, *Urgent (Within 24 Hours)*, *Planned Shift Rota / Block Booking*.
    - Instant dispatch reference code generation and 15-minute response SLA.
 
-4. **Interactive Earnings & Rate Calculator**:
-   - **Candidates**: Calculate estimated weekly take-home and monthly earnings based on role, hours, and night/weekend enhancements.
-   - **Care Homes**: Preview all-inclusive agency hourly rates with zero hidden fees.
+8. **Interactive Earnings & Rate Calculator**:
+   - Estimate weekly take-home pay and client hourly rates with zero hidden fees.
 
-5. **Accredited Compliance & Training Hub**:
-   - Details of Dominion's 7-point vetting standard (Enhanced DBS on update service, real-time NMC PIN verification, right to work checks, 5-year work history audit, clinical references).
-   - Showcase of certified practical training courses: *Moving & Handling of People*, *Physical Intervention / PMVA*, *Safeguarding of Vulnerable Adults (SoVA)*, *Basic Life Support*, and *Infection Control*.
+9. **Accredited Compliance & Training Hub**:
+   - Details of Dominion's 7-point vetting standard (Enhanced DBS on update service, real-time NMC PIN verification, right to work checks, 5-year work history audit).
+   - Certified practical training courses: *Moving & Handling*, *Physical Intervention / PMVA*, *SoVA*, *BLS*.
 
-6. **24/7 Emergency Dispatch Banner**:
-   - Always-accessible floating hotline pill allowing 1-tap phone connection to `01642 345242`.
+10. **24/7 Emergency Dispatch Banner & Mobile Quick Action Bar**:
+    - Sticky bottom dispatch banner and native mobile quick-action bar for instant calling on smartphones.
 
 ---
 
@@ -99,6 +111,32 @@ npm run preview
 
 ---
 
+## 🎨 Theme & Phone Customization Guide
+
+### How to change the 24/7 phone number:
+Open `src/config/siteConfig.ts` and update line 19:
+```typescript
+contact: {
+  phone: '01642 345242',       // Format for display
+  phoneClean: '01642345242',   // Numbers only for tel: links
+  ...
+}
+```
+All components throughout the website update immediately.
+
+### How to change brand colors and fonts:
+Open `src/index.css` and adjust the variables under `@theme`:
+```css
+@theme {
+  --color-brand-primary: #047857;  /* Main buttons & CTA color */
+  --color-brand-dark: #064e3b;     /* Hero background & headers */
+  --color-brand-accent: #10b981;   /* Badges & highlights */
+  --font-brand: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+```
+
+---
+
 ## 🌐 Deployment Instructions
 
 ### Deploy to Netlify
@@ -125,14 +163,14 @@ This repository contains a pre-configured `vercel.json`:
 ## 🤖 AI Agent & Automation Preloads
 
 For future autonomous AI agents or engineers maintaining this project:
-* Please review **[`AGENTS.md`](./AGENTS.md)** for detailed domain constraints, form handling rules, and code patterns.
+* Please review **[`AGENTS.md`](./AGENTS.md)** for detailed domain constraints, form handling rules, British healthcare terminology requirements, and code patterns.
 * Use `CLAUDE.md` and `.cursorrules` for tool-specific settings.
 
 ---
 
 ## 📞 Company Contact Details
 
-* **Headquarters**: 219, Stockton Business Centre, Stockton-on-Tees, TS18 1DW, United Kingdom
-* **24/7 Telephone Dispatch**: `01642 345242`
-* **Direct Email**: `info@dhcservicesltd.co.uk`
+* **Headquarters**: 219 Stockton Business Centre, Stockton-on-Tees, TS18 1DW, United Kingdom
+* **24/7 Telephone Dispatch**: `01642 345242` (Configurable in `siteConfig.ts`)
+* **Direct Email**: `info@dhcservicesltd.co.uk` (Protected by `<ProtectedEmail />`)
 * **Operating Hours**: 24/7/365

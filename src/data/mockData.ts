@@ -1,15 +1,16 @@
 import type { JobOpening } from '../types';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const COMPANY_DETAILS = {
-  name: 'Dominion Healthcare Services Ltd',
-  shortName: 'Dominion Healthcare',
-  tagline: 'Premier UK Healthcare Recruitment & Temporary Staffing Specialists',
+  name: SITE_CONFIG.companyName,
+  shortName: SITE_CONFIG.shortName,
+  tagline: SITE_CONFIG.tagline,
   subtagline: 'Supplying compliant, compassionate Registered Nurses, HCAs, and Support Workers to Care Homes, NHS Trusts, and Hospitals 24/7/365.',
-  address: '219, Stockton Business Centre, Stockton-on-Tees, TS18 1DW, United Kingdom',
-  phone: '01642 345242',
-  phoneClean: '01642345242',
-  emergencyPhone: '01642 345242',
-  email: 'info@dhcservicesltd.co.uk',
+  address: SITE_CONFIG.contact.address,
+  phone: SITE_CONFIG.contact.phone,
+  phoneClean: SITE_CONFIG.contact.phoneClean,
+  emergencyPhone: SITE_CONFIG.contact.phone,
+  email: SITE_CONFIG.contact.email,
   operatingHours: '24 Hours a Day / 7 Days a Week (365 Days/Year)',
   stats: [
     { label: 'Completed Shifts', value: '70,000+', suffix: 'shifts' },

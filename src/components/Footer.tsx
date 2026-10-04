@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Send } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, ArrowUp, Send } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/mockData';
+import { DominionLogo } from './DominionLogo';
+import { ProtectedEmail } from './ProtectedEmail';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -32,23 +34,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-700 to-teal-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-emerald-900/40">
-                D
-              </div>
-              <div>
-                <span className="font-extrabold text-xl tracking-tight text-white block">DOMINION</span>
-                <span className="text-[10px] uppercase tracking-wider text-emerald-400 block -mt-1 font-semibold">
-                  Healthcare Staffing Services Ltd
-                </span>
-              </div>
+            <div className="py-1">
+              <DominionLogo variant="white" height={44} />
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Dominion Healthcare Services is a premier UK healthcare recruitment and temporary staffing agency. We supply fully compliant Registered Nurses (RGN/RMN), Healthcare Assistants, and Support Workers to Care Homes, NHS Trusts, and Hospitals 24/7/365.
+              Dominion Healthcare Services Ltd is a premier UK healthcare recruitment and temporary staffing agency. We supply fully compliant Registered Nurses (RGN/RMN), Healthcare Assistants, and Support Workers to Care Homes, NHS Trusts, and Hospitals 24/7/365.
             </p>
 
-            <div className="space-y-2 text-xs text-slate-400 pt-2">
+            <div className="space-y-2.5 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
@@ -56,14 +50,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href={`tel:${COMPANY_DETAILS.phoneClean}`} className="hover:text-white transition-colors font-semibold">
-                  01642 345242 (24/7 Dispatch)
+                  {COMPANY_DETAILS.phone} (24/7 Dispatch Desk)
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-white transition-colors">
-                  {COMPANY_DETAILS.email}
-                </a>
+                <ProtectedEmail
+                  className="text-emerald-400 hover:text-white"
+                  iconClassName="w-4 h-4 text-emerald-400 shrink-0"
+                />
               </div>
             </div>
           </div>
@@ -230,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestStaff, onJo
                 href={`tel:${COMPANY_DETAILS.phoneClean}`}
                 className="text-xs font-extrabold text-emerald-400 hover:underline block"
               >
-                01642 345242
+                {COMPANY_DETAILS.phone}
               </a>
             </div>
           </div>

@@ -120,7 +120,7 @@ export const StaffBookingModal: React.FC<StaffBookingModalProps> = ({ isOpen, on
               className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-xs"
             >
               <Phone className="w-3 h-3" />
-              <span>Call 01642 345242</span>
+              <span>Call {COMPANY_DETAILS.phone}</span>
             </a>
           </div>
         </div>

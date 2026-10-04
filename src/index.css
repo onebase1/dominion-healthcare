@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   DOMINION HEALTHCARE SERVICES LTD — THEME & BRAND CUSTOMIZATION GUIDE
+   ==========================================================================
+   To easily modify website colors or typography upon feedback, adjust the
+   values below. Any changes made here immediately take effect across all
+   Tailwind classes and custom CSS components.
+
+   • Brand Green: Emerald palette reflecting UK NHS / Healthcare trust identity
+   • Font Family: Plus Jakarta Sans (loaded via index.html Google Fonts link)
+   ========================================================================== */
+
+@theme {
+  --color-brand-primary: #047857;       /* Emerald 700 - Main buttons & primary links */
+  --color-brand-primary-hover: #065f46; /* Emerald 800 - Button hover state */
+  --color-brand-dark: #064e3b;          /* Emerald 900 - Deep hero headers & contrast backgrounds */
+  --color-brand-accent: #10b981;        /* Emerald 500 - Active badges, status dots & highlights */
+  --color-brand-light: #ecfdf5;         /* Emerald 50 - Soft badge backgrounds & subtle accents */
+  --color-brand-gold: #f59e0b;          /* Amber 500 - Urgency dispatch notices & trust ratings */
+
+  --font-brand: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+:root {
+  --brand-primary: #047857;
+  --brand-dark: #064e3b;
+  --brand-accent: #10b981;
+  --brand-gold: #f59e0b;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

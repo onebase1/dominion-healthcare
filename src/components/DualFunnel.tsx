@@ -159,7 +159,7 @@ export const DualFunnel: React.FC<DualFunnelProps> = ({ onRequestStaff, onJoinUs
                   Work With Freedom & Top Rates
                 </h3>
                 <p className="text-emerald-100 text-sm leading-relaxed">
-                  Take control of your work schedule with flexible shifts, reliable weekly payroll, and rewarding agency rates.
+                  Take control of your shift rota with flexible days and nights, reliable weekly payroll, and rewarding agency rates.
                 </p>
               </div>
 

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_DETAILS } from '../data/mockData';
+import { ProtectedEmail } from './ProtectedEmail';
 import type { ContactFormData } from '../types';
 
 export const ContactSection: React.FC = () => {
@@ -68,21 +69,10 @@ export const ContactSection: React.FC = () => {
                 </div>
               </a>
 
-              <a
-                href={`mailto:${COMPANY_DETAILS.email}`}
-                className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 active:scale-98 transition-all group min-h-[64px]"
-              >
-                <div className="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center shrink-0 shadow-md shadow-teal-700/20 group-hover:scale-105 transition-transform">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Email Direct</div>
-                  <div className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                    {COMPANY_DETAILS.email}
-                  </div>
-                  <span className="text-[11px] text-slate-500">Response within 1 business hour</span>
-                </div>
-              </a>
+              <ProtectedEmail
+                variant="card"
+                className="bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 active:scale-98 transition-all min-h-[64px]"
+              />
 
               <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 min-h-[64px]">
                 <div className="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center shrink-0">

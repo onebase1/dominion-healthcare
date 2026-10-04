@@ -43,7 +43,7 @@ export const EmergencyBanner: React.FC<EmergencyBannerProps> = ({ onRequestStaff
           className="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm min-h-[40px]"
         >
           <PhoneCall className="w-3.5 h-3.5" />
-          <span>Call 01642 345242</span>
+          <span>Call {COMPANY_DETAILS.phone}</span>
         </a>
         <button
           onClick={onRequestStaff}

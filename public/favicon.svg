@@ -1,13 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="fav-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#064e3b" />
-      <stop offset="100%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#022c22" />
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="24" fill="url(#grad)" />
-  <path d="M50 20 L76 34 L76 66 L50 80 L24 66 L24 34 Z" fill="none" stroke="#34d399" stroke-width="4" stroke-linejoin="round"/>
-  <!-- Bold 'D' inside -->
-  <text x="50" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" text-anchor="middle">D</text>
-  <circle cx="70" cy="30" r="5" fill="#10b981" />
+
+  <!-- Background Shield Container -->
+  <rect width="100" height="100" rx="22" fill="url(#fav-bg)" />
+  <rect x="3" y="3" width="94" height="94" rx="19" fill="none" stroke="#10b981" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- DHCS Monogram -->
+  <text 
+    x="50" 
+    y="46" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="29" 
+    font-weight="900" 
+    letter-spacing="-1px" 
+    fill="#ffffff" 
+    text-anchor="middle"
+  >
+    DHCS
+  </text>
+
+  <!-- Linked Healthcare Workers (4 Care Team Members Holding Hands) -->
+  <g fill="#34d399" stroke="#34d399">
+    <!-- Figure 1 -->
+    <circle cx="23" cy="62" r="3.5" />
+    <path d="M 23 66 L 23 79 L 26 79 L 26 86 L 20 86 L 20 66 Z" />
+    
+    <!-- Figure 2 -->
+    <circle cx="41" cy="62" r="3.5" />
+    <path d="M 41 66 L 41 79 L 44 79 L 44 86 L 38 86 L 38 66 Z" />
+    
+    <!-- Figure 3 -->
+    <circle cx="59" cy="62" r="3.5" />
+    <path d="M 59 66 L 59 79 L 62 79 L 62 86 L 56 86 L 56 66 Z" />
+    
+    <!-- Figure 4 -->
+    <circle cx="77" cy="62" r="3.5" />
+    <path d="M 77 66 L 77 79 L 80 79 L 80 86 L 74 86 L 74 66 Z" />
+
+    <!-- Connected Arms / Holding Hands Chain -->
+    <line x1="23" y1="71" x2="41" y2="71" stroke-width="3" stroke-linecap="round" />
+    <line x1="41" y1="71" x2="59" y2="71" stroke-width="3" stroke-linecap="round" />
+    <line x1="59" y1="71" x2="77" y2="71" stroke-width="3" stroke-linecap="round" />
+  </g>
 </svg>
