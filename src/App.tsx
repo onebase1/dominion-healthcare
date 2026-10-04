@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { DualFunnel } from './components/DualFunnel';
@@ -14,12 +14,47 @@ import { Footer } from './components/Footer';
 import { StaffBookingModal } from './components/StaffBookingModal';
 import { CandidateApplyModal } from './components/CandidateApplyModal';
 import { EmergencyBanner } from './components/EmergencyBanner';
+import { MobileQuickBar } from './components/MobileQuickBar';
+import { FEATURED_JOBS } from './data/mockData';
 import type { JobOpening } from './types';
 
 export function App() {
   const [isStaffBookingOpen, setIsStaffBookingOpen] = useState(false);
   const [isCandidateApplyOpen, setIsCandidateApplyOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
+
+  // Deep-link routing for mobile shares (WhatsApp, SMS, QR codes, job board links)
+  useEffect(() => {
+    const handleUrlRoute = () => {
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+
+      // Check for job ID in hash or query params (e.g. #jobs?id=JOB-001 or ?job=JOB-001)
+      const jobId = params.get('job') || params.get('id') || (hash.includes('id=') ? hash.split('id=')[1]?.split('&')[0] : null);
+      if (jobId) {
+        const foundJob = FEATURED_JOBS.find(j => j.id.toLowerCase() === jobId.toLowerCase());
+        if (foundJob) {
+          setSelectedJob(foundJob);
+          setIsCandidateApplyOpen(true);
+          return;
+        }
+      }
+
+      if (hash === '#apply' || hash === '#register' || params.get('apply') === 'true' || params.get('register') === 'true') {
+        setSelectedJob(null);
+        setIsCandidateApplyOpen(true);
+      } else if (hash === '#book' || params.get('book') === 'true') {
+        setIsStaffBookingOpen(true);
+      } else if (hash === '#jobs') {
+        const el = document.getElementById('jobs');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    handleUrlRoute();
+    window.addEventListener('hashchange', handleUrlRoute);
+    return () => window.removeEventListener('hashchange', handleUrlRoute);
+  }, []);
 
   const handleNavigate = (sectionId: string) => {
     const el = document.getElementById(sectionId);
@@ -47,7 +82,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-emerald-700 selection:text-white pb-16 lg:pb-0">
       {/* Sticky Navigation Header */}
       <Header
         onRequestStaff={handleOpenStaffBooking}
@@ -114,6 +149,12 @@ export function App() {
 
       {/* Floating Emergency Shift Cover Pill */}
       <EmergencyBanner onRequestStaff={handleOpenStaffBooking} />
+
+      {/* Sticky Thumb-Zone Quick Action Dock for Mobile Smartphones (lg:hidden) */}
+      <MobileQuickBar
+        onJoinUs={handleOpenCandidateApply}
+        onRequestStaff={handleOpenStaffBooking}
+      />
 
       {/* Modals */}
       <StaffBookingModal

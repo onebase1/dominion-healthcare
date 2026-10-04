@@ -12,10 +12,10 @@ export const EmergencyBanner: React.FC<EmergencyBannerProps> = ({ onRequestStaff
   if (dismissed) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-40 max-w-sm sm:max-w-md w-[calc(100%-2rem)] bg-slate-950/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-emerald-500/40 animate-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-18 lg:bottom-4 right-4 z-30 max-w-sm sm:max-w-md w-[calc(100%-2rem)] sm:w-auto bg-slate-950/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-emerald-500/40 animate-in slide-in-from-bottom-5 duration-300">
       <button
         onClick={() => setDismissed(true)}
-        className="absolute top-2 right-2 p-1 text-slate-400 hover:text-white rounded-md transition-colors"
+        className="absolute top-2 right-2 p-1.5 text-slate-400 hover:text-white rounded-md transition-colors cursor-pointer min-h-[36px] min-w-[36px] flex items-center justify-center"
         aria-label="Dismiss banner"
       >
         <X className="w-3.5 h-3.5" />
@@ -40,14 +40,14 @@ export const EmergencyBanner: React.FC<EmergencyBannerProps> = ({ onRequestStaff
       <div className="mt-3 pt-2.5 border-t border-slate-800 flex items-center gap-2">
         <a
           href={`tel:${COMPANY_DETAILS.phoneClean}`}
-          className="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+          className="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm min-h-[40px]"
         >
           <PhoneCall className="w-3.5 h-3.5" />
           <span>Call 01642 345242</span>
         </a>
         <button
           onClick={onRequestStaff}
-          className="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 hover:border-emerald-500 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+          className="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 hover:border-emerald-500 transition-colors flex items-center justify-center gap-1.5 cursor-pointer min-h-[40px]"
         >
           <CalendarCheck className="w-3.5 h-3.5 text-emerald-400" />
           <span>Book Cover</span>
